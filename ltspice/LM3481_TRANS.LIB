@@ -1,0 +1,388 @@
+*$
+* LM3481
+*****************************************************************************
+* (C) Copyright 2018 Texas Instruments Incorporated. All rights reserved.                                            
+*****************************************************************************
+** This model is designed as an aid for customers of Texas Instruments.
+** TI and its licensors and suppliers make no warranties, either expressed
+** or implied, with respect to this model, including the warranties of 
+** merchantability or fitness for a particular purpose.  The model is
+** provided solely on an "as is" basis.  The entire risk as to its quality
+** and performance is with the customer.
+*****************************************************************************
+*
+* This model is subject to change without notice. Texas Instruments
+* Incorporated is not responsible for updating this model.
+*
+*****************************************************************************
+*
+** Released by: WEBENCH Design Center, Texas Instruments Inc.
+* Part: LM3481
+* Date: 14FEB2018
+* Model Type: TRANSIENT
+* Simulator: PSPICE
+* Simulator Version: 16.2.0.p001
+* EVM Order Number: AN-1756 LM3481EVM
+* EVM User's Guide: SNVA304A–April 2008–Revised May 2013
+* Datasheet: SNVS346F –NOVEMBER 2007–REVISED NOVEMBER 2014
+* Topologies Supported: Boost
+*
+* Model Version: Final 1.10
+*
+*****************************************************************************
+*
+* Updates:
+*
+* Final 1.10
+* Soft-start is added in model and LM3478 is used as base model for this.
+*
+* Final 1.00
+* Release to Web.
+*
+*****************************************************************************
+*
+* Model Usage Notes:
+*
+* A. Features have been modelled
+*	1. Short circuit Protection
+*	2. 100kHz to 1MHz Adjustable Frequency with Shutdown 
+*	3. Internal Push-Pull Driver With 1A Peak Current Capability
+*	4. Internal LDO of 6V. 
+*	5. Internal Soft-Start of 15ms 
+*	6. VIN UVLO protection
+*	7. Output Over-voltage protection
+*
+* B. Features haven't been modelled
+*	1. Input Current vs Input Voltage
+*   2. SYNC functionality has not been modelled
+*	3. Temperature dependent characteristics
+*
+*****************************************************************************
+.SUBCKT LM3481_TRANS AGND COMP DR FA_SD FB ISEN PGND UVLO VCC VIN PARAMS: SS=0
++ VCOMP=0 
+R_Rin2g         VIN PGND  1G TC=0,0 
+R_R_OC         OCDLY OC  216.45 TC=0,0 
+R_ROC2toG         OC1 AGND  10G TC=0,0 
+R_R_LDO         VIN V6V  1MEG TC=0,0 
+C_Css         SS AGND  1uF IC={SS*1.275} TC=0,0 
+R_Ruv         N16930285 N16931482  1 TC=0,0 
+E_ABM6         VGM_REF 0 VALUE { IF( V(SS) > {VFB}, {VFB}, V(SS))    }
+X_U6         N16908277 N16875644 N16909753 RESET AND3_BASIC_GEN PARAMS: VDD=1
++  VSS=0 VTHRESH=500E-3
+C_Cdriver         DRVRSIG DR  1nF  TC=0,0 
+C_Cuv         N16930285 AGND  1n  TC=0,0 
+E_Edriver         N16855996 DR VALUE { IF(V(PWM_CLK) > 0.5, 3,-3) }
+G_Iss         N16850239 SS VALUE { IF(V(oscSHUT) < 1 & V(UVLO_INT) > 2 &
++  V(OC2)<0.4, 1uF*(1.4-V(SS))/({Tstart}/2.5), (V(AGND)-V(SS))/1k)    }
+R_R1         N16981880 N16982093  1k TC=0,0 
+G_ABM2I1         AGND COMP VALUE { LIMIT(((V(VGM_REF)-V(FB))*450u),640u,-65u)  
++   }
+R_Rss2g         SS AGND  1G TC=0,0 
+E_E_OC2         OC1 AGND VALUE { IF (V(OC) > 0.5, IF(V(OCdly) > 0.5, 1 , 0), 0)
++  }
+R_R2         AGND COMP  152k TC=0,0 
+V_U1_V3         U1_N16803655 0 {1.3*0.9}
+V_U1_V4         U1_N16804165 0 1m
+V_U1_V2         U1_N167973070 0 1
+X_U1_U138         U1_TONMIN U1_N16795506 INV_BASIC_GEN PARAMS: VDD=1 VSS=0
++  VTHRESH=500E-3
+E_U1_ABM55         U1_TONMIN 0 VALUE { IF(V(U1_TON325N)>1,1,0)    }
+G_U1_ABMII5         0 U1_TON325N VALUE { IF(V(PWM_CLK) > 0.5, 18.18u,0)    }
+R_U1_R5         0 U1_TONMIN  1Meg TC=0,0 
+E_U1_minoff_ramp         U1_N16803515 0 VALUE { (V(RAMP)-0.1)    }
+X_U1_U139         U1_TON325N U1_N167973070 d_d PARAMS:
+X_U1_U141         U1_PWM_INT U1_MIN_OFF_TIME PWM_CLK AND2_BASIC_GEN PARAMS:
++  VDD=1 VSS=0 VTHRESH=500E-3
+X_U1_U140         U1_N16803515 U1_N16803655 U1_N16804165 U1_N16804289
++  COMPHYS_BASIC_GEN PARAMS: VDD=1 VSS=0 VTHRESH=0.5
+X_U1_U4         U1_N16804289 U1_MIN_OFF_TIME INV_BASIC_GEN PARAMS: VDD=1 VSS=0
++  VTHRESH=500E-3
+X_U1_U17         U1_PWM_INT N16793497 SET U1_N16793493 U1_N16793552
++  U1_N16793493 dffsbrb_rhpbasic_gen PARAMS: VDD=1 VSS=0 VTHRESH=500E-3
+V_U1_V1         U1_N16793493 0 1
+X_U1_U137         N16855935 U1_N16795506 U1_N16793552 OR2_BASIC_GEN PARAMS:
++  VDD=1 VSS=0 VTHRESH=500E-3
+C_U1_C1         U1_TON325N 0  4p IC=0 TC=0,0 
+X_U1_S14    PWM_CLK 0 U1_TON325N 0 PWM_U1_S14 
+V_Iss_tst         AGND N16850239  
++PULSE 0 0 0 
+X_U11         N17067699 COMP d_d1 PARAMS:
+C_C_OC         OCDLY AGND  1n  TC=0,0 
+E_E_bias         VCC PGND V6V PGND 1
+E_GAIN4         UVLO_INT 0 VALUE {2.5 * V(N16930285)}
+D_D_LDO         PGND V6V DZ6P0 
+X_U7         UVLO N16926804 N16927149 N16931482 COMPHYS_BASIC_GEN PARAMS: VDD=1
++  VSS=0 VTHRESH=0.5
+V_V2         N16927149 AGND 10m
+E_ABM166         N17033989 0 VALUE { IF(V(FA_SD_30uhigh)>0.5,0,2.7)    }
+X_U9         COMP N17033989 d_d1 PARAMS:
+V_V4         N17067699 AGND 60m
+G_ABMII1         AGND ISEN VALUE { (V(RAMP) - 0.1)*40e-6    }
+R_R_sen2G         ISEN AGND  1G TC=0,0 
+R_R_FBspike         FB_NOSPIKE FBVAL  100 TC=0,0 
+X_U138         RESET N16983200 N16855935 AND2_BASIC_GEN PARAMS: VDD=1 VSS=0
++  VTHRESH=500E-3
+X_U137         OC OC2 N16907101 OR2_BASIC_GEN PARAMS: VDD=1 VSS=0
++  VTHRESH=500E-3
+E_OVgen         OV AGND VALUE { IF(V(FB_NOSPIKE, AGND) + 35mV*V(OV) >
++  V(VGM_REF)+120mV, 1, 0) }
+E_ABM167         N16981880 0 VALUE { IF(V(FA_SD)>1.35,1,0)    }
+E_U2_rampgen         RAMP 0 VALUE {
++  0.1+(1.57-V(U2_12))*(V(U2_SAWTOOTH)-0.1)/0.8    }
+E_U2_SLOWtst2         CLK 0 VALUE { IF(V(U2_N16832334) > 0.5, 2.8, 0.2)    }
+C_U2_Crmp         U2_SAWTOOTH U2_0P1V  69.44pF IC=0 TC=0,0 
+V_U2_IFA         U2_FAINT FA  
++PULSE 0 0 0 
+E_U2_shutgen         OSCSHUT 0 VALUE { IF (V(U2_13)>1, 2, 0)    }
+E_U2_E12gen         U2_12 0 VALUE { V(U2_3)*(1-V(U2_5))    }
+E_U2_VFAgen         U2_FA_GEN 0 VALUE { IF (V(UVLO_INT) > 1.5, V(UVLO_INT) -
++  1.5, 0)    }
+X_U2_U2         U2_N16789125 FA_SD_30UHIGH BUF_BASIC_GEN PARAMS: VDD=1 VSS=0
++  VTHRESH=0.5
+X_U2_U9         U2_N16789125 U2_FA_SD_INT d_d1 PARAMS:
+C_U2_Cshut         U2_13 0  1nF  TC=0,0 
+R_U2_RFA_int         U2_FA_GEN U2_FAINT  1k TC=0,0 
+X_U2_U789         FA U2_N16841879 U2_N16841909 U2_FA_SD_INT COMPHYS_BASIC_GEN
++  PARAMS: VDD=1 VSS=0 VTHRESH=0.5
+R_U2_R12toG         U2_12 0  10G TC=0,0 
+R_U2_Rslow         OC2 0  1G TC=0,0 
+V_U2_V1         U2_N16841879 0 1.27
+E_U2_SLOWtst         U2_N16819994 0 VALUE { IF(V(U2_FABY8) > 0.5, V(U2_FSW)/8,
++  V(U2_FSW))    }
+C_U2_Cfa         U2_N16789125 0  1n IC=0 TC=0,0 
+R_U2_Rfa         U2_FA_SD_INT U2_N16789125  43.29k TC=0,0 
+E_U2_pulsgen         U2_N16828837 0 VALUE { IF(V(U2_VCO_SQ) > 1u, 1, 0)    }
+X_U2_U5         U2_13 U2_5 d_d1 PARAMS:
+V_U2_V2         U2_N16841909 0 0.62
+E_U2_VCO_SIN         U2_VCO_SQ 0 VALUE { SIN(2*3.142*V(U2_N16819994)*TIME)    }
+G_U2_ABMII2         U2_0P1V U2_SAWTOOTH VALUE { IF(V(CLK) < 1  & V(U2_FSW) >
++  1u, I(V_U2_IFA)/(V(FA)+2210*I(V_U2_IFA)), (V(U2_0P1V)-V(U2_SAWTOOTH))/100)   
++  }
+E_U2_ABM6         U2_FSW 0 VALUE { IF(V(U2_FA_SD_INT) > 0.5, 0,
++  ((22E9*I(V_U2_IFA))/(1+5.74k*I(V_U2_IFA))))    }
+C_U2_Cshut_dly         U2_5 0  150nF  TC=0,0 
+R_U2_Rsaw2G         U2_SAWTOOTH 0  10G TC=0,0 
+X_U2_U10         OC2 CLK U2_FABY8 N16834021 srlatchrhp_basic_gen PARAMS: VDD=1
++  VSS=0 VTHRESH=0.5
+R_U2_Rrmp2G         RAMP 0  10G TC=0,0 
+R_U2_Rshut_dly         U2_3 U2_5  1 TC=0,0 
+V_U2_p1V         U2_0P1V 0  
++PULSE 0 0.1 0 
+R_U2_Rshut         UVLO_INT U2_13  100k TC=0,0 
+X_U2_U788         U2_N16828837 U2_N16832334 rising_oneshot PARAMS:  PULSE=155n
++  VDD=1 VSS=0 VTHRESH=0.5
+E_U2_Eshut_dly         U2_3 0 VALUE { IF(I(V_U2_IFA) > 100u/65, 0, 1)    }
+R_U2_Rshut2g         OSCSHUT 0  10G TC=0,0 
+E_E_OC         OC AGND VALUE { IF (V(COMP_pos) > 160m - 0.01*V(OC), 1, 0)  }
+E_ABM164         COMP_NEG 0 VALUE { 1.08*V(COMP) -1.48 - 0.0644*(V(RAMP) - 0.1)
++     }
+C_C_FBspike         FB_NOSPIKE AGND  1n  TC=0,0 
+X_U10         N16945907 CLK OC2 N16988765 srlatchrhp_basic_gen PARAMS: VDD=1
++  VSS=0 VTHRESH=0.5
+E_E1         FBVAL AGND FB AGND 1
+E_E_OC3         N16945907 AGND VALUE { if (v(COMP_pos) > .22 - 0.01*v(OC2), 1,
++  0)  }
+R_Rdriver         N16855996 DRVRSIG  1 TC=0,0 
+E_ABM165         N16875644 0 VALUE { IF( V(COMP_POS) > V(COMP_NEG), 0 ,1)    }
+C_C1         N16982093 AGND  1n  TC=0,0 
+X_U4         N16982093 N16983200 INV_BASIC_GEN PARAMS: VDD=1 VSS=0
++  VTHRESH=500E-3
+V_V1         N16926804 AGND 1.43
+E_GAIN2         COMP_POS 0 VALUE {1 * V(ISEN)}
+M_M1         VCC DRVRSIG DR DR MNDRVR           
+X_U5         OV N16909753 INV_BASIC_GEN PARAMS: VDD=1 VSS=0 VTHRESH=500E-3
+R_Rov2g         OV AGND  1G TC=0,0 
+V_IFA         FA FA_SD  
++PULSE 0 0 0 
+X_U3         N16907101 N16908277 INV_BASIC_GEN PARAMS: VDD=1 VSS=0
++  VTHRESH=500E-3
+M_M2         PGND DRVRSIG DR DR MPDRVR           
+E_ABM4         SET 0 VALUE { IF ((V(CLK) > 1) & (V(oscSHUT) < 0.5) & (V(OV) <
++  0.5),1, 0)    }
+.IC         V(COMP )={{SS}*{{VCOMP}+90m+1.48}/1.08}
+.PARAM  vfb=1.275
+.PARAM tstart=15m
+.ENDS LM3481_TRANS
+*$
+.subckt PWM_U1_S14 1 2 3 4  
+S_U1_S14         3 4 1 2 _U1_S14
+RS_U1_S14         1 2 1G
+.MODEL         _U1_S14 VSWITCH Roff=1e9 Ron=1 Voff=0.75 Von=0.25
+.ends PWM_U1_S14
+*$
+.model DZ6P0 d
++ is=1e-014
++ bv=6
++ ibv=1e-005
++ rs=0
++ n=1
++ vj=1
++ m=0.5
+*$
+.model MNDRVR nmos
++ kp=2
++ rd=1
++ vto=2
+*$
+.model MPDRVR pmos
++ kp=2
++ rd=1
++ vto=-2
+*$
+.SUBCKT COMPHYS_BASIC_GEN INP INM HYS OUT PARAMS: VDD=1 VSS=0 VTHRESH=0.5	
+EIN INP1 INM1 INP INM 1 
+EHYS INP1 INP2 VALUE { IF( V(1) > {VTHRESH},-V(HYS),0) }
+EOUT OUT 0 VALUE { IF( V(INP2)>V(INM1), {VDD} ,{VSS}) }
+R1 OUT 1 1
+C1 1 0 5n
+RINP1 INP1 0 1K
+.ENDS COMPHYS_BASIC_GEN
+*$
+.SUBCKT AND2_BASIC_GEN A B Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 
+E_ABMGATE    YINT 0 VALUE {{IF(V(A) > {VTHRESH}  &  
++ V(B) > {VTHRESH},{VDD},{VSS})}}
+RINT YINT Y 1
+CINT Y 0 1n
+.ENDS AND2_BASIC_GEN
+*$
+.SUBCKT AND3_BASIC_GEN A B C Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 
+E_ABMGATE    YINT 0 VALUE {{IF(V(A) > {VTHRESH}  &  
++ V(B) > {VTHRESH} &
++ V(C) > {VTHRESH},{VDD},{VSS})}}
+RINT YINT Y 1
+CINT Y 0 1n
+.ENDS AND3_BASIC_GEN
+*$
+.SUBCKT OR2_BASIC_GEN A B Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 
+E_ABMGATE    YINT 0 VALUE {{IF(V(A) > {VTHRESH}  |  
++ V(B) > {VTHRESH},{VDD},{VSS})}}
+RINT YINT Y 1
+CINT Y 0 1n
+.ENDS OR2_BASIC_GEN
+*$
+.SUBCKT INV_BASIC_GEN A  Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 
+E_ABMGATE    YINT 0 VALUE {{IF(V(A) > {VTHRESH} , 
++ {VSS},{VDD})}}
+RINT YINT Y 1
+CINT Y 0 1n
+.ENDS INV_BASIC_GEN
+*$
+.SUBCKT BUF_DELAY_BASIC_GEN A  Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 DELAY = 10n 
+E_ABMGATE1    YINT1 0 VALUE {{IF(V(A) > {VTHRESH} , 
++ {VDD},{VSS})}}
+RINT YINT1 YINT2 1
+CINT YINT2 0 {DELAY*1.3}
+E_ABMGATE2    YINT3 0 VALUE {{IF(V(YINT2) > {VTHRESH} , 
++ {VDD},{VSS})}}
+RINT2 YINT3 Y 1
+CINT2 Y 0 1n
+.ENDS BUF_DELAY_BASIC_GEN
+*$
+.SUBCKT DFFSBRB_RHPBASIC_GEN Q QB CLK D RB SB PARAMS: VDD=1 VSS=0 VTHRESH=0.5 
+X1 CLK CLKdel INV_DELAY_BASIC_GEN PARAMS: VDD={VDD} VSS={VSS} VTHRESH={VTHRESH} DELAY = 15n
+X2 CLK CLKdel CLKint AND2_BASIC_GEN PARAMS: VDD={VDD} VSS={VSS} VTHRESH={VTHRESH} 
+GQ 0 Qint VALUE = {IF(V(RB) < {VTHRESH},-5,IF(V(SB)< {VTHRESH},5, IF(V(CLKint)> {VTHRESH}, 
++ IF(V(D)> {VTHRESH},5,-5),0)))}
+CQint Qint 0 1n
+RQint Qint 0 1000MEG
+D_D10 Qint MY5 D_D1
+V1 MY5 0 5
+D_D11 0 Qint D_D1 
+EQ Qqq 0 Qint 0 1
+X3 Qqq Qqqd1 BUF_DELAY_BASIC_GEN PARAMS: VDD={VDD} VSS={VSS} VTHRESH={VTHRESH} DELAY = 20n
+RQq Qqqd1 Q 1
+EQb Qbr 0 VALUE = {IF( V(Q) > {VTHRESH}, {VSS},{VDD})}
+RQb Qbr Qb 1 
+Cdummy1 Q 0 1nF 
+Cdummy2 QB 0 1nF 
+.MODEL D_D1 D( IS=1e-15 TT=10p Rs=0.05 N=.1  )
+.IC V(Qint) {VSS}
+.ENDS DFFSBRB_RHPBASIC_GEN
+*$
+.subckt d_d 1 2
+d1 1 2 dd
+.model dd D (Is = 1e-14 Rs = 0.1 N = 0.1 TT = 10p)
+.ends d_d
+*$
+.SUBCKT INV_DELAY_BASIC_GEN A  Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 DELAY = 10n 
+E_ABMGATE1    YINT1 0 VALUE {{IF(V(A) > {VTHRESH} , 
++ {VDD},{VSS})}}
+RINT YINT1 YINT2 1
+CINT YINT2 0 {DELAY*1.3}
+E_ABMGATE2    YINT3 0 VALUE {{IF(V(YINT2) > {VTHRESH} , 
++ {VSS},{VDD})}}
+RINT2 YINT3 Y 1
+CINT2 Y 0 1n
+.ENDS INV_DELAY_BASIC_GEN
+*$
+.SUBCKT BUF_BASIC_GEN A  Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 
+E_ABMGATE    YINT 0 VALUE {{IF(V(A) > {VTHRESH} , 
++ {VDD},{VSS})}}
+RINT YINT Y 1
+CINT Y 0 1n
+.ENDS BUF_BASIC_GEN
+*$
+.SUBCKT D_D1 1 2
+D1 1 2 DD1
+.MODEL DD1 D ( IS=1e-15 TT=10p Rs=0.05 N=.01 )
+.ENDS D_D1
+*$
+.SUBCKT CESR IN OUT
++ PARAMs:  C=100u ESR=0.01 X=2 IC=0
+C	IN 1  {C*X} IC={IC}
+RESR	1 OUT {ESR/X}
+.ENDS CESR
+*$
+.SUBCKT LDCR IN OUT
++ PARAMs:  L=1u DCR=0.01 IC=0
+L	IN 1  {L} IC={IC}
+RDCR	1 OUT {DCR}
+.ENDS LDCR
+*$
+.SUBCKT SRLATCHRHP_BASIC_GEN S R Q QB PARAMS: VDD=1 VSS=0 VTHRESH=0.5 
+GQ 0 Qint VALUE = {IF(V(R) > {VTHRESH},-5,IF(V(S)>{VTHRESH},5, 0))}
+CQint Qint 0 1n
+RQint Qint 0 1000MEG
+D_D10 Qint MY5 D_D1
+V1 MY5 0 {VDD}
+D_D11 MYVSS Qint D_D1
+V2 MYVSS 0 {VSS} 
+EQ Qqq 0 Qint 0 1
+X3 Qqq Qqqd1 BUF_BASIC_GEN PARAMS: VDD={VDD} VSS={VSS} VTHRESH={VTHRESH}
+RQq Qqqd1 Q 1
+EQb Qbr 0 VALUE = {IF( V(Q) > {VTHRESH}, {VSS},{VDD})}
+RQb Qbr QB 1 
+Cdummy1 Q 0 1n 
+Cdummy2 QB 0 1n
+.IC V(Qint) {VSS}
+.MODEL D_D1 D ( IS=1e-15 TT=10p Rs=0.05 N=.1 )
+.ENDS SRLATCHRHP_BASIC_GEN
+*$
+.SUBCKT RISING_ONESHOT IN OUT PARAMS: PULSE=100n VDD=1 VSS=0 VTHRESH=0.5
+D_D1         INT IN DD 
+C_C1         0 INT  1n  
+X_U22         INT IN_B_DELAYED INV_BASIC_GEN PARAMS: VDD={VDD} VSS={VSS}
++  VTHRESH={VTHRESH}
+R_R1         IN INT  {PULSE/(0.693 * 1E-9)}  
+X_U1         IN IN_B_DELAYED OUT AND2_BASIC_GEN PARAMS: VDD={VDD} VSS={VSS}
++  VTHRESH={VTHRESH}
+.MODEL DD D( IS=1F N=0.01 TT = 10p )
+.ENDS RISING_ONESHOT
+*$
+.SUBCKT N_MOSFET drain gate source
+Cgd g d 7E-11
+M1 d g s s _M1_modX L=1u W=1u
+.MODEL _M1_modX NMOS CGDO=0 CGSO=0 KP=100
++ TOX=1E-7 UO=600 VTO= 1.1
+Rds2 source s 0.0115
+Rds1 drain d 0.0115
+RG gate g 1.3
+Cgs g s 3.1E-10
+Dbd source drain Dbt
+.MODEL Dbt D(BV= 27.5 CJO= 4.9E-10 M=0.35 VJ=.9 )
+.ENDS
+*$ 
+.MODEL D_D1_New D( IS=1e-15 TT=10p Rs=0.05 N=.1  )
+*$
+.MODEL _D2_MODXX D BV=2.7 CJO=4PF IS=7E-09 M=.45 N=0.2 RS=.8  TT=6E-09 VJ=.6V
+*$

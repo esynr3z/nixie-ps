@@ -1,0 +1,419 @@
+**********
+* Littelfuse, LP
+* TVS Diode SPICE Models
+* SMDJxxxCA Family
+*
+* T. Chenoski
+* Irving Technical Center
+* 
+* v2 04/23/08
+*
+**********
+**********
+.SUBCKT SMDJ5.0CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   0.013meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0026 N=1.5 IBV=10m BV=6.46 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ6.0CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   0.015meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0042 N=1.5 IBV=10m BV=6.74 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ6.5CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   0.026meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0050 N=1.5 IBV=10m BV=7.29 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ7.0CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   0.070meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0057 N=1.5 IBV=10m BV=7.86 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ7.5CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   0.150meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0066 N=1.5 IBV=10m BV=8.41 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ8.0CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   0.320meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0071 N=1.5 IBV=10m BV=8.98 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ8.5CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   0.850meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0079 N=1.5 IBV=10m BV=9.53 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ9.0CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   1.800meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0093 N=1.5 IBV=10m BV=10.10 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ10CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   4meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0112 N=1.5 IBV=10m BV=11.21 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ11CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   11meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0117 N=1.5 IBV=10m BV=12.32 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ12CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   12meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0142 N=1.5 IBV=10m BV=13.43 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ13CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   13meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0164 N=1.5 IBV=10m BV=14.54 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ14CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   14meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0189 N=1.5 IBV=10m BV=15.76 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ15CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   15meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0196 N=1.5 IBV=10m BV=16.87 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ16CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   16meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0222 N=1.5 IBV=10m BV=17.98 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ17CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   17meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0250 N=1.5 IBV=10m BV=19.09 CJO=1360p)
+.ENDS
+
+.SUBCKT SMDJ18CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   18meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0279 N=1.5 IBV=10m BV=20.20 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ20CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   20meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0343 N=1.5 IBV=10m BV=22.42 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ22CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   22meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0407 N=1.5 IBV=10m BV=24.64 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ24CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   24meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0492 N=1.5 IBV=10m BV=26.97 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ26CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   26meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0575 N=1.5 IBV=10m BV=29.19 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ28CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   28meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0675 N=1.5 IBV=10m BV=31.41 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ30CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   30meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0754 N=1.5 IBV=10m BV=33.63 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ33CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   33meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0912 N=1.5 IBV=10m BV=37.07 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ36CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   36meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.1085 N=1.5 IBV=10m BV=40.40 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ40CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    2            3   Dtvs
+Rleak   1            2   40meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.1337 N=1.5 IBV=10m BV=44.84 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ43CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   43meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0773 N=1.5 IBV=10m BV=24.14 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ45CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   45meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0851 N=1.5 IBV=10m BV=25.25 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ48CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   48meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.0960 N=1.5 IBV=10m BV=26.92 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ51CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   51meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.1093 N=1.5 IBV=10m BV=28.63 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ54CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   54meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.1217 N=1.5 IBV=10m BV=30.30 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ58CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   58meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.1408 N=1.5 IBV=10m BV=32.52 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ60CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   60meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.1499 N=1.5 IBV=10m BV=33.68 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ64CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   64meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.1687 N=1.5 IBV=10m BV=35.91 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ70CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   70meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.2054 N=1.5 IBV=10m BV=39.29 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ75CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   75meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.2351 N=1.5 IBV=10m BV=42.07 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ78CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   78meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.2556 N=1.5 IBV=10m BV=43.78 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ85CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   85meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.3003 N=1.5 IBV=10m BV=47.67 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ90CA     1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   90meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.3500 N=1.5 IBV=10m BV=50.50 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ100CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   100meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.4297 N=1.5 IBV=10m BV=56.06 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ110CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   110meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.5022 N=1.5 IBV=10m BV=61.61 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ120CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   120meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.5976 N=1.5 IBV=10m BV=67.17 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ130CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   130meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.6970 N=1.5 IBV=10m BV=72.72 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ150CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   150meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=0.9583 N=1.5 IBV=10m BV=84.34 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ160CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   160meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=1.0830 N=1.5 IBV=10m BV=89.89 CJO=1775p)
+.ENDS
+
+.SUBCKT SMDJ170CA    1   2
+*       TERMINALS:   T1  T2
+Done    1            3   Dtvs
+Dtwo    4            3   Dtvs
+Dthr    4            5   Dtvs
+Dfou    2            5   Dtvs
+Rleak   1            2   170meg
+.MODEL  Dtvs         D   (IS=1.0e-5 RS=1.2236 N=1.5 IBV=10m BV=95.45 CJO=1775p)
+.ENDS

@@ -1,0 +1,14 @@
+******* Discrete Diode Electrical Parameters *******
+** Product: ES3J
+** Package: SMB/DO-214AB
+** Fast Rectifiers
+****************************************************
+.MODEL ES3J D
++ IS=7.056e-7     N=2.0         RS=0.2628      
++ BV=600          IBV=1e-05     CJO=9.985e-11
++ VJ=0.58         M=0.52        FC=0.5
++ TT=3.54e-08     KF=0          AF=1
++ XTI=3.0         EG=1.02       TBV1=0.001   
+****************************************************
+** Creation: May-10-2007
+** Fairchild Semiconductor
