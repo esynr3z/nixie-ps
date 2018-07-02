@@ -62,19 +62,6 @@ F 3 "~" H 4250 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L esynr3z_TransistorFET:IRFH5106PBF Q1
-U 1 1 5B2E3CFA
-P 5850 3100
-F 0 "Q1" H 5958 3153 60  0000 L CNN
-F 1 "IRFH5106PBF" H 5200 3300 60  0000 L CNN
-F 2 "lib_fp:PQFN_5X6MM" H 6050 3300 60  0001 L CNN
-F 3 "https://www.infineon.com/dgdl/irfh5106pbf.pdf?fileId=5546d462533600a40153561ae5e81ea6" H 6050 3400 60  0001 L CNN
-F 4 "HEXFET MOSFET N-channel 60V 100A 5.6mOhm PQFN 5x6" H 6050 3500 60  0001 L CNN "Description"
-F 5 "Infineon Technologies" H 6050 3600 60  0001 L CNN "Manufacturer"
-	1    5850 3100
-	1    0    0    -1  
-$EndComp
-$Comp
 L esynr3z_DiodeRectifier:E1G D1
 U 1 1 5B2E7F0D
 P 7000 2350
@@ -150,8 +137,8 @@ L Device:R R5
 U 1 1 5B30AF32
 P 5850 3850
 F 0 "R5" H 5920 3896 50  0000 L CNN
-F 1 "0.01" H 5920 3805 50  0000 L CNN
-F 2 "lib_fp:0805" V 5780 3850 50  0001 C CNN
+F 1 "0.02" H 5920 3805 50  0000 L CNN
+F 2 "lib_fp:2010" V 5780 3850 50  0001 C CNN
 F 3 "~" H 5850 3850 50  0001 C CNN
 	1    5850 3850
 	1    0    0    -1  
@@ -510,4 +497,17 @@ Wire Wire Line
 Connection ~ 7950 2550
 Wire Wire Line
 	7950 2550 7950 2800
+$Comp
+L esynr3z_TransistorFET:IRFH7185TRPBF Q1
+U 1 1 5B3A8C4D
+P 5850 3100
+F 0 "Q1" H 5958 3153 60  0000 L CNN
+F 1 "IRFH7185TRPBF" H 5050 3350 60  0000 L CNN
+F 2 "lib_fp:PQFN_5X6MM" H 6050 3300 60  0001 L CNN
+F 3 "https://www.infineon.com/dgdl/irfh7185pbf.pdf?fileId=5546d462533600a40153561ee0b11ee1" H 6050 3400 60  0001 L CNN
+F 4 "HEXFET MOSFET N-channel 100V 123A 5.2mOhm PQFN 5x6" H 6050 3500 60  0001 L CNN "Description"
+F 5 "Infineon Technologies" H 6050 3600 60  0001 L CNN "Manufacturer"
+	1    5850 3100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

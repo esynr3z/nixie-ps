@@ -195,14 +195,14 @@ X SB 8 400 200 300 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# esynr3z_TransistorFET:IRFH5106PBF
+# esynr3z_TransistorFET:IRFH7185TRPBF
 #
-DEF esynr3z_TransistorFET:IRFH5106PBF Q 0 0 N Y 1 F N
+DEF esynr3z_TransistorFET:IRFH7185TRPBF Q 0 0 N Y 1 F N
 F0 "Q" -106 143 60 H V R CNN
-F1 "esynr3z_TransistorFET:IRFH5106PBF" 136 0 60 V V C CNN
+F1 "esynr3z_TransistorFET:IRFH7185TRPBF" 136 0 60 V V C CNN
 F2 "esynr3z_QFN:PQFN_5X6MM" 200 200 60 H I L CNN
-F3 "https://www.infineon.com/dgdl/irfh5106pbf.pdf?fileId=5546d462533600a40153561ae5e81ea6" 200 300 60 H I L CNN
-F4 "HEXFET MOSFET N-channel 60V 100A 5.6mOhm PQFN 5x6" 200 400 60 H I L CNN "Description"
+F3 "https://www.infineon.com/dgdl/irfh7185pbf.pdf?fileId=5546d462533600a40153561ee0b11ee1" 200 300 60 H I L CNN
+F4 "HEXFET MOSFET N-channel 100V 123A 5.2mOhm PQFN 5x6" 200 400 60 H I L CNN "Description"
 F5 "Infineon Technologies" 200 500 60 H I L CNN "Manufacturer"
 DRAW
 C -50 0 130 0 1 0 f
