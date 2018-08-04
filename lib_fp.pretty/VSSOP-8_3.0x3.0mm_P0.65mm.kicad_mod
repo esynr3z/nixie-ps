@@ -33,7 +33,7 @@
   (pad 3 smd rect (at -2.4 0.325 270) (size 0.45 1.45) (layers F.Cu F.Paste F.Mask))
   (pad 2 smd rect (at -2.4 -0.325 270) (size 0.45 1.45) (layers F.Cu F.Paste F.Mask))
   (pad 1 smd rect (at -2.4 -0.975 270) (size 0.45 1.45) (layers F.Cu F.Paste F.Mask))
-  (model ${KISYS3DMOD}/Package_SO.3dshapes/VSSOP-8_3.0x3.0mm_P0.65mm.wrl
+  (model ${KIPRJMOD}/3d_models/VSSOP-8_3.0x3.0mm_P0.65mm.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

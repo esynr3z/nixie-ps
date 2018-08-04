@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L esynr3z_RegulatorSwitching:LM3488MM U1
+L nixie-ps:esynr3z_RegulatorSwitching_LM3488MM U1
 U 1 1 5B2C071A
 P 4850 3200
 F 0 "U1" H 4600 3350 60  0000 L CNN
@@ -29,7 +29,7 @@ F 6 "Texas Instruments" H 5050 3800 60  0001 L CNN "Manufacturer"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R4
+L nixie-ps:Device_R R4
 U 1 1 5B2E29C2
 P 4150 3850
 F 0 "R4" H 4220 3896 50  0000 L CNN
@@ -40,7 +40,7 @@ F 3 "~" H 4150 3850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C4
+L nixie-ps:Device_C C4
 U 1 1 5B2E2B51
 P 6200 3850
 F 0 "C4" H 6315 3896 50  0000 L CNN
@@ -51,7 +51,7 @@ F 3 "~" H 6200 3850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP1 C1
+L nixie-ps:Device_CP1 C1
 U 1 1 5B2E2CE8
 P 4250 2550
 F 0 "C1" H 4365 2596 50  0000 L CNN
@@ -62,7 +62,7 @@ F 3 "~" H 4250 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L esynr3z_DiodeRectifier:E1G D1
+L nixie-ps:esynr3z_DiodeRectifier_E1G D1
 U 1 1 5B2E7F0D
 P 7000 2350
 F 0 "D1" H 7000 2450 60  0000 C CNN
@@ -73,7 +73,7 @@ F 3 "http://www.lrc.cn/data/pdf/SODE1J-SH.pdf" H 7200 2650 60  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L esynr3z_DiodeTVS:SMBJ30CA D2
+L nixie-ps:esynr3z_DiodeTVS_SMBJ30CA D2
 U 1 1 5B2FB57D
 P 6200 3100
 F 0 "D2" V 6147 3203 60  0000 L CNN
@@ -84,7 +84,7 @@ F 3 "http://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelf
 	0    1    1    0   
 $EndComp
 $Comp
-L esynr3z_Potentiometer:PVZ3A RV1
+L nixie-ps:esynr3z_Potentiometer_PVZ3A RV1
 U 1 1 5B308C77
 P 7650 3800
 F 0 "RV1" H 7580 3891 50  0000 R CNN
@@ -96,7 +96,7 @@ F 4 "1.5k" H 7580 3709 50  0000 R CNN "Resistance"
 	1    0    0    -1  
 $EndComp
 $Comp
-L esynr3z_Transformer:EFD15_2WI T1
+L nixie-ps:esynr3z_Transformer_EFD15_2WI T1
 U 1 1 5B309C28
 P 6350 2550
 F 0 "T1" H 6350 3110 50  0000 C CNN
@@ -111,7 +111,7 @@ F 7 "Sec 160x0.1" H 6350 2837 50  0000 C CNN "Sec"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R3
+L nixie-ps:Device_R R3
 U 1 1 5B30AA24
 P 3800 3850
 F 0 "R3" H 3870 3896 50  0000 L CNN
@@ -122,7 +122,7 @@ F 3 "~" H 3800 3850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C3
+L nixie-ps:Device_C C3
 U 1 1 5B30AAD8
 P 3800 3500
 F 0 "C3" H 3915 3546 50  0000 L CNN
@@ -133,7 +133,7 @@ F 3 "~" H 3800 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R5
+L nixie-ps:Device_R R5
 U 1 1 5B30AF32
 P 5850 3850
 F 0 "R5" H 5920 3896 50  0000 L CNN
@@ -144,7 +144,7 @@ F 3 "~" H 5850 3850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R2
+L nixie-ps:Device_R R2
 U 1 1 5B30AFEC
 P 7650 3450
 F 0 "R2" H 7720 3496 50  0000 L CNN
@@ -155,7 +155,7 @@ F 3 "~" H 7650 3450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R1
+L nixie-ps:Device_R R1
 U 1 1 5B30B03F
 P 7650 2550
 F 0 "R1" H 7720 2596 50  0000 L CNN
@@ -166,7 +166,7 @@ F 3 "~" H 7650 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C2
+L nixie-ps:Device_C C2
 U 1 1 5B30B0A5
 P 7250 2550
 F 0 "C2" H 7365 2596 50  0000 L CNN
@@ -181,7 +181,7 @@ Wire Wire Line
 Wire Wire Line
 	4250 2350 4250 2400
 $Comp
-L power:GND #PWR01
+L nixie-ps:power_GND #PWR01
 U 1 1 5B30B3AF
 P 4000 2800
 F 0 "#PWR01" H 4000 2550 50  0001 C CNN
@@ -192,7 +192,7 @@ F 3 "" H 4000 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR02
+L nixie-ps:power_GND #PWR02
 U 1 1 5B30B404
 P 4250 2800
 F 0 "#PWR02" H 4250 2550 50  0001 C CNN
@@ -203,7 +203,7 @@ F 3 "" H 4250 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR03
+L nixie-ps:power_GND #PWR03
 U 1 1 5B30B4BF
 P 6800 2800
 F 0 "#PWR03" H 6800 2550 50  0001 C CNN
@@ -270,7 +270,7 @@ Connection ~ 5850 3350
 Wire Wire Line
 	7650 3650 7650 3600
 $Comp
-L power:GND #PWR011
+L nixie-ps:power_GND #PWR011
 U 1 1 5B30DC07
 P 7650 4050
 F 0 "#PWR011" H 7650 3800 50  0001 C CNN
@@ -281,7 +281,7 @@ F 3 "" H 7650 4050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR04
+L nixie-ps:power_GND #PWR04
 U 1 1 5B30E3AA
 P 7250 2800
 F 0 "#PWR04" H 7250 2550 50  0001 C CNN
@@ -292,7 +292,7 @@ F 3 "" H 7250 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR05
+L nixie-ps:power_GND #PWR05
 U 1 1 5B30E76B
 P 7950 2800
 F 0 "#PWR05" H 7950 2550 50  0001 C CNN
@@ -303,7 +303,7 @@ F 3 "" H 7950 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR09
+L nixie-ps:power_GND #PWR09
 U 1 1 5B30EB81
 P 5850 4050
 F 0 "#PWR09" H 5850 3800 50  0001 C CNN
@@ -314,7 +314,7 @@ F 3 "" H 5850 4050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR08
+L nixie-ps:power_GND #PWR08
 U 1 1 5B30EF42
 P 5250 4050
 F 0 "#PWR08" H 5250 3800 50  0001 C CNN
@@ -325,7 +325,7 @@ F 3 "" H 5250 4050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR07
+L nixie-ps:power_GND #PWR07
 U 1 1 5B30F358
 P 4150 4050
 F 0 "#PWR07" H 4150 3800 50  0001 C CNN
@@ -336,7 +336,7 @@ F 3 "" H 4150 4050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR06
+L nixie-ps:power_GND #PWR06
 U 1 1 5B30F719
 P 3800 4050
 F 0 "#PWR06" H 3800 3800 50  0001 C CNN
@@ -423,7 +423,7 @@ Wire Wire Line
 Wire Wire Line
 	5850 4000 5850 4050
 $Comp
-L power:GND #PWR010
+L nixie-ps:power_GND #PWR010
 U 1 1 5B361C86
 P 6200 4050
 F 0 "#PWR010" H 6200 3800 50  0001 C CNN
@@ -452,7 +452,7 @@ COMP
 Text Label 4150 3500 0    50   ~ 0
 FA
 $Comp
-L Connector:Conn_01x04_Male J1
+L nixie-ps:Connector_Conn_01x04_Male J1
 U 1 1 5B3899B5
 P 3750 2350
 F 0 "J1" H 3856 2628 50  0000 C CNN
@@ -463,7 +463,7 @@ F 3 "~" H 3750 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x04_Male J2
+L nixie-ps:Connector_Conn_01x04_Male J2
 U 1 1 5B389BAF
 P 8200 2350
 F 0 "J2" H 8173 2323 50  0000 R CNN
@@ -498,7 +498,7 @@ Connection ~ 7950 2550
 Wire Wire Line
 	7950 2550 7950 2800
 $Comp
-L esynr3z_TransistorFET:IRFH7185TRPBF Q1
+L nixie-ps:esynr3z_TransistorFET_IRFH7185TRPBF Q1
 U 1 1 5B3A8C4D
 P 5850 3100
 F 0 "Q1" H 5958 3153 60  0000 L CNN

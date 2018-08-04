@@ -30,7 +30,7 @@
   (pad 6 smd rect (at 0.635 -3.048) (size 0.6 1.35) (layers F.Cu F.Paste F.Mask))
   (pad 7 smd rect (at -0.635 -3.048) (size 0.6 1.35) (layers F.Cu F.Paste F.Mask))
   (pad 8 smd rect (at -1.905 -3) (size 0.6 1.35) (layers F.Cu F.Paste F.Mask))
-  (model ${KICAD_USER_3DMOD_DIR}/esynr3z_QFN.3dshapes/PQFN_5X6MM.step
+  (model ${KIPRJMOD}/3d_models/PQFN_5X6MM.step
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 90))
