@@ -187,7 +187,7 @@
       (net 1 /VIN))
     (pad 2 smd rect (at 2.8 0 270) (size 3.5 1.6) (layers F.Cu F.Paste F.Mask)
       (net 2 GND))
-    (model ${KISYS3DMOD}/Capacitor_SMD.3dshapes/CP_Elec_6.3x5.4.wrl
+    (model ${KISYS3DMOD}/Capacitor_SMD.3dshapes/CP_Elec_6.3x5.3.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
