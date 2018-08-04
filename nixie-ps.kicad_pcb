@@ -1,4 +1,4 @@
-(kicad_pcb (version 20171130) (host pcbnew 5.0.0-rc2-unknown-r13164-44c1f578)
+(kicad_pcb (version 20171130) (host pcbnew 6.0.0-rc1-unknown-r13424-46f5d81d)
 
   (general
     (thickness 1.6)
@@ -33,8 +33,6 @@
     (zone_clearance 0.254)
     (zone_45_only no)
     (trace_min 0.2)
-    (segment_width 0.15)
-    (edge_width 0.15)
     (via_size 0.8)
     (via_drill 0.4)
     (via_min_size 0.4)
@@ -44,6 +42,8 @@
     (uvias_allowed no)
     (uvia_min_size 0.2)
     (uvia_min_drill 0.1)
+    (edge_width 0.15)
+    (segment_width 0.15)
     (pcb_text_width 0.3)
     (pcb_text_size 1.5 1.5)
     (mod_edge_width 0.15)
@@ -80,7 +80,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory gerber/))
+      (outputdirectory "gerber/"))
   )
 
   (net 0 "")
