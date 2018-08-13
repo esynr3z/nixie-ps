@@ -5,9 +5,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "High voltage power supply unit for Nixie tubes"
 Date ""
-Rev ""
+Rev "v1.0"
 Comp ""
 Comment1 ""
 Comment2 ""
