@@ -4,3 +4,4 @@
 *.plt
 *.net
 *.zip
+*cache.lib
