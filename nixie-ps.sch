@@ -7,7 +7,7 @@ encoding utf-8
 Sheet 1 1
 Title "High voltage power supply unit for Nixie tubes"
 Date ""
-Rev "v1.0"
+Rev "v1.1"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -73,17 +73,6 @@ F 3 "http://www.lrc.cn/data/pdf/SODE1J-SH.pdf" H 7200 2650 60  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L nixie-ps:esynr3z_DiodeTVS_SMBJ30CA D2
-U 1 1 5B2FB57D
-P 6200 3100
-F 0 "D2" V 6147 3203 60  0000 L CNN
-F 1 "SMBJ30CA" V 6253 3203 60  0000 L CNN
-F 2 "lib_fp:SMB" H 6400 3300 60  0001 L CNN
-F 3 "http://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smbj_datasheet.pdf.pdf" H 6400 3400 60  0001 L CNN
-	1    6200 3100
-	0    1    1    0   
-$EndComp
-$Comp
 L nixie-ps:esynr3z_Potentiometer_PVZ3A RV1
 U 1 1 5B308C77
 P 7650 3800
@@ -106,7 +95,7 @@ F 3 "~" H 6350 2550 50  0001 C CNN
 F 4 "B66413U0100K187" H 6800 2900 50  0001 C CNN "Core"
 F 5 "B66414W1008D001" H 6800 3000 50  0001 C CNN "CoilFormer"
 F 6 "Pri 5x0.7" H 6350 2928 50  0000 C CNN "Prim"
-F 7 "Sec 200x0.1" H 6350 2837 50  0000 C CNN "Sec"
+F 7 "Sec 50x0.2" H 6350 2837 50  0000 C CNN "Sec"
 	1    6350 2550
 	1    0    0    -1  
 $EndComp
@@ -137,7 +126,7 @@ L nixie-ps:Device_R R5
 U 1 1 5B30AF32
 P 5850 3850
 F 0 "R5" H 5920 3896 50  0000 L CNN
-F 1 "0.02" H 5920 3805 50  0000 L CNN
+F 1 "0.01" H 5920 3805 50  0000 L CNN
 F 2 "lib_fp:2010" V 5780 3850 50  0001 C CNN
 F 3 "~" H 5850 3850 50  0001 C CNN
 	1    5850 3850
@@ -148,7 +137,7 @@ L nixie-ps:Device_R R2
 U 1 1 5B30AFEC
 P 7650 3450
 F 0 "R2" H 7720 3496 50  0000 L CNN
-F 1 "2.2k" H 7720 3405 50  0000 L CNN
+F 1 "7.5k" H 7720 3405 50  0000 L CNN
 F 2 "lib_fp:0805" V 7580 3450 50  0001 C CNN
 F 3 "~" H 7650 3450 50  0001 C CNN
 	1    7650 3450
@@ -159,7 +148,7 @@ L nixie-ps:Device_R R1
 U 1 1 5B30B03F
 P 7650 2550
 F 0 "R1" H 7720 2596 50  0000 L CNN
-F 1 "470k" H 7720 2505 50  0000 L CNN
+F 1 "1.2M" H 7720 2505 50  0000 L CNN
 F 2 "lib_fp:0805" V 7580 2550 50  0001 C CNN
 F 3 "~" H 7650 2550 50  0001 C CNN
 	1    7650 2550
@@ -509,5 +498,16 @@ F 4 "HEXFET MOSFET N-channel 100V 123A 5.2mOhm PQFN 5x6" H 6050 3500 60  0001 L 
 F 5 "Infineon Technologies" H 6050 3600 60  0001 L CNN "Manufacturer"
 	1    5850 3100
 	1    0    0    -1  
+$EndComp
+$Comp
+L nixie-ps:esynr3z_DiodeTVS_SMBJ70CA D2
+U 1 1 5B829451
+P 6200 3100
+F 0 "D2" V 6147 3203 60  0000 L CNN
+F 1 "SMBJ70CA" V 6253 3203 60  0000 L CNN
+F 2 "lib_fp:SMB" H 6400 3300 60  0001 L CNN
+F 3 "http://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smbj_datasheet.pdf.pdf" H 6400 3400 60  0001 L CNN
+	1    6200 3100
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC
