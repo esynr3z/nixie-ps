@@ -11,7 +11,7 @@ High voltage flyback boost converter for nixie tubes.
 This specifications are goals. Table will be updated after board test.
 
 | V_in, V | I_in, A | V_out, V | I_out, mA | P_out, W | Efficiency, % |
-|--------:|--------:|---------:|----------:|----- ---:|--------------:|
+|--------:|--------:|---------:|----------:|---------:|--------------:|
 |       5 |       1 |      180 |        23 |        4 |            80 |
 |      12 |       2 |      180 |        45 |        8 |            80 |
 
