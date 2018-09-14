@@ -42,12 +42,12 @@ $EndComp
 $Comp
 L nixie-ps:Device_C C4
 U 1 1 5B2E2B51
-P 6200 3850
-F 0 "C4" H 6315 3896 50  0000 L CNN
-F 1 "0.01u" H 6315 3805 50  0000 L CNN
-F 2 "lib_fp:0805" H 6238 3700 50  0001 C CNN
-F 3 "~" H 6200 3850 50  0001 C CNN
-	1    6200 3850
+P 6300 3850
+F 0 "C4" H 6415 3896 50  0000 L CNN
+F 1 "0.01u" H 6415 3805 50  0000 L CNN
+F 2 "lib_fp:0805" H 6338 3700 50  0001 C CNN
+F 3 "~" H 6300 3850 50  0001 C CNN
+	1    6300 3850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -94,8 +94,8 @@ F 2 "lib_fp:EFD15_B66414W1008D001" H 6350 2550 50  0001 C CNN
 F 3 "~" H 6350 2550 50  0001 C CNN
 F 4 "B66413U0100K187" H 6800 2900 50  0001 C CNN "Core"
 F 5 "B66414W1008D001" H 6800 3000 50  0001 C CNN "CoilFormer"
-F 6 "Pri 5x0.7" H 6350 2928 50  0000 C CNN "Prim"
-F 7 "Sec 50x0.2" H 6350 2837 50  0000 C CNN "Sec"
+F 6 "Pri 10x0.7" H 6350 2928 50  0000 C CNN "Prim"
+F 7 "Sec 145x0.2" H 6350 2837 50  0000 C CNN "Sec"
 	1    6350 2550
 	1    0    0    -1  
 $EndComp
@@ -126,7 +126,7 @@ L nixie-ps:Device_R R5
 U 1 1 5B30AF32
 P 5850 3850
 F 0 "R5" H 5920 3896 50  0000 L CNN
-F 1 "0.01" H 5920 3805 50  0000 L CNN
+F 1 "0.033" H 5920 3805 50  0000 L CNN
 F 2 "lib_fp:2010" V 5780 3850 50  0001 C CNN
 F 3 "~" H 5850 3850 50  0001 C CNN
 	1    5850 3850
@@ -253,8 +253,6 @@ Wire Wire Line
 	5850 3350 6200 3350
 Wire Wire Line
 	6200 3350 6200 3300
-Wire Wire Line
-	5850 3350 5850 3650
 Connection ~ 5850 3350
 Wire Wire Line
 	7650 3650 7650 3600
@@ -342,7 +340,7 @@ Wire Wire Line
 Wire Wire Line
 	7950 2450 7950 2550
 Wire Wire Line
-	6200 4000 6200 4050
+	6300 4000 6300 4050
 Wire Wire Line
 	5250 3700 5250 3750
 Wire Wire Line
@@ -403,29 +401,24 @@ Connection ~ 7650 3200
 Wire Wire Line
 	7650 3200 7650 3300
 Wire Wire Line
-	6200 3700 6200 3650
-Wire Wire Line
-	6200 3650 5850 3650
-Connection ~ 5850 3650
-Wire Wire Line
-	5850 3650 5850 3700
+	6300 3700 6300 3650
 Wire Wire Line
 	5850 4000 5850 4050
 $Comp
 L nixie-ps:power_GND #PWR010
 U 1 1 5B361C86
-P 6200 4050
-F 0 "#PWR010" H 6200 3800 50  0001 C CNN
-F 1 "GND" H 6205 3877 50  0000 C CNN
-F 2 "" H 6200 4050 50  0001 C CNN
-F 3 "" H 6200 4050 50  0001 C CNN
-	1    6200 4050
+P 6300 4050
+F 0 "#PWR010" H 6300 3800 50  0001 C CNN
+F 1 "GND" H 6305 3877 50  0000 C CNN
+F 2 "" H 6300 4050 50  0001 C CNN
+F 3 "" H 6300 4050 50  0001 C CNN
+	1    6300 4050
 	1    0    0    -1  
 $EndComp
 Text Notes 3300 2450 0    50   ~ 0
-5-12 DCV
+5-12V in
 Text Notes 8400 2350 0    50   ~ 0
-180 DCV\n25 mA
+180V 20mA @ 5V in\n180V 40mA @ 12V in
 Text Label 7650 3200 0    50   ~ 0
 FB
 Text Label 4250 2350 0    50   ~ 0
@@ -510,4 +503,13 @@ F 3 "http://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelf
 	1    6200 3100
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	5850 3350 5850 3650
+Wire Wire Line
+	5850 3650 6300 3650
+Connection ~ 5850 3650
+Wire Wire Line
+	5850 3650 5850 3700
+Text Notes 5150 4500 0    50   ~ 0
+R5 note: this value can be in 0.025 - 0.1 ohm range \ndepending on the desired output current and thermal characteristics
 $EndSCHEMATC
