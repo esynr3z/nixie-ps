@@ -7,7 +7,7 @@ encoding utf-8
 Sheet 1 1
 Title "High voltage power supply unit for Nixie tubes"
 Date ""
-Rev "v1.1"
+Rev "v1.0"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -22,9 +22,7 @@ F 0 "U1" H 4600 3350 60  0000 L CNN
 F 1 "LM3488MM" H 4550 2750 60  0000 L CNN
 F 2 "lib_fp:VSSOP-8_3.0x3.0mm_P0.65mm" H 5050 3400 60  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm3488q-q1.pdf" H 5050 3500 60  0001 L CNN
-F 4 "LM3488MM/NOPB" H 5050 3600 60  0001 L CNN "MPN"
-F 5 "Versatile low-side N-FET high performance controller for switching regulators" H 5050 3700 60  0001 L CNN "Description"
-F 6 "Texas Instruments" H 5050 3800 60  0001 L CNN "Manufacturer"
+F 4 "Versatile low-side N-FET high performance controller for switching regulators" H 5050 3700 60  0001 L CNN "Description"
 	1    4850 3200
 	1    0    0    -1  
 $EndComp
@@ -79,8 +77,8 @@ P 7650 3800
 F 0 "RV1" H 7580 3891 50  0000 R CNN
 F 1 "PVZ3A152" H 7580 3800 50  0000 R CNN
 F 2 "lib_fp:Murata_PVZ3A" H 7800 3850 50  0001 C CNN
-F 3 "" H 7900 3950 50  0001 C CNN
-F 4 "1.5k" H 7580 3709 50  0000 R CNN "Resistance"
+F 3 "~" H 7900 3950 50  0001 C CNN
+F 4 "1.5k" H 7580 3709 50  0000 R CNN "Rating"
 	1    7650 3800
 	1    0    0    -1  
 $EndComp
@@ -88,14 +86,11 @@ $Comp
 L nixie-ps:esynr3z_Transformer_EFD15_2WI T1
 U 1 1 5B309C28
 P 6350 2550
-F 0 "T1" H 6350 3110 50  0000 C CNN
-F 1 "EFD15_2WI" H 6350 3019 50  0000 C CNN
+F 0 "T1" H 6350 2900 50  0000 C CNN
+F 1 "EFD15_2WI" H 6350 2800 50  0000 C CNN
 F 2 "lib_fp:EFD15_B66414W1008D001" H 6350 2550 50  0001 C CNN
-F 3 "~" H 6350 2550 50  0001 C CNN
-F 4 "B66413U0100K187" H 6800 2900 50  0001 C CNN "Core"
-F 5 "B66414W1008D001" H 6800 3000 50  0001 C CNN "CoilFormer"
-F 6 "Pri 10x0.7" H 6350 2928 50  0000 C CNN "Prim"
-F 7 "Sec 145x0.2" H 6350 2837 50  0000 C CNN "Sec"
+F 3 "https://en.tdk.eu/inf/80/db/fer/efd_15_8_5.pdf" H 6350 2550 50  0001 C CNN
+F 4 "Windings: primary 10 turns x 0.7 mm, secondary 145 turns x 0.2 mm; Core: B66413U0100K187; Coil former: B66414W1008D001; Yokes: B66414B2000;" H 6050 3400 50  0001 C CNN "Notes"
 	1    6350 2550
 	1    0    0    -1  
 $EndComp
@@ -162,6 +157,7 @@ F 0 "C2" H 7365 2596 50  0000 L CNN
 F 1 "0.47u" H 7365 2505 50  0000 L CNN
 F 2 "lib_fp:1812" H 7288 2400 50  0001 C CNN
 F 3 "~" H 7250 2550 50  0001 C CNN
+F 4 "250V X7R" H 7450 2400 50  0000 C CNN "Rating"
 	1    7250 2550
 	1    0    0    -1  
 $EndComp
@@ -488,7 +484,6 @@ F 1 "IRFH7185TRPBF" H 5050 3350 60  0000 L CNN
 F 2 "lib_fp:PQFN_5X6MM" H 6050 3300 60  0001 L CNN
 F 3 "https://www.infineon.com/dgdl/irfh7185pbf.pdf?fileId=5546d462533600a40153561ee0b11ee1" H 6050 3400 60  0001 L CNN
 F 4 "HEXFET MOSFET N-channel 100V 123A 5.2mOhm PQFN 5x6" H 6050 3500 60  0001 L CNN "Description"
-F 5 "Infineon Technologies" H 6050 3600 60  0001 L CNN "Manufacturer"
 	1    5850 3100
 	1    0    0    -1  
 $EndComp
@@ -512,4 +507,6 @@ Wire Wire Line
 	5850 3650 5850 3700
 Text Notes 5150 4500 0    50   ~ 0
 R5 note: this value can be in 0.025 - 0.1 ohm range \ndepending on the desired output current and thermal characteristics
+Text Notes 6100 2150 0    50   ~ 0
+Prim 10x0.7\nSec 145x0.2
 $EndSCHEMATC

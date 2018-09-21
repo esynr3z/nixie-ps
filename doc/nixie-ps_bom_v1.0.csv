@@ -1,0 +1,17 @@
+Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,Rating,Notes
+1,,Device_C,C4,0.01u,0805,1,~,,
+2,,Device_C,C2,0.47u,1812,1,~,250V X7R,
+3,,Device_CP1,C1,100u,CP_Elec_6.3x5.4,1,~,,
+4,,Device_C,C3,22n,0805,1,~,,
+5,,esynr3z_DiodeRectifier_E1G,D1,E1G,SOD-123FL,1,http://www.lrc.cn/data/pdf/SODE1J-SH.pdf,,
+6,,esynr3z_DiodeTVS_SMBJ70CA,D2,SMBJ70CA,SMB,1,http://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smbj_datasheet.pdf.pdf,,
+7,,Connector_Conn_01x04_Male,J1 J2,Conn_01x04_Male,PinHeader_1x04_P2.54mm_Vertical,2,~,,
+8,,esynr3z_TransistorFET_IRFH7185TRPBF,Q1,IRFH7185TRPBF,PQFN_5X6MM,1,https://www.infineon.com/dgdl/irfh7185pbf.pdf?fileId=5546d462533600a40153561ee0b11ee1,,
+9,,Device_R,R5,0.033,2010,1,~,,
+10,,Device_R,R1,1.2M,0805,1,~,,
+11,,Device_R,R3,4.7k,0805,1,~,,
+12,,Device_R,R4,47k,0805,1,~,,
+13,,Device_R,R2,7.5k,0805,1,~,,
+14,,esynr3z_Potentiometer_PVZ3A,RV1,PVZ3A152,Murata_PVZ3A,1,~,1.5k,
+15,,esynr3z_Transformer_EFD15_2WI,T1,EFD15_2WI,EFD15_B66414W1008D001,1,https://en.tdk.eu/inf/80/db/fer/efd_15_8_5.pdf,,"Windings: primary 10 turns x 0.7 mm, secondary 145 turns x 0.2 mm; Core: B66413U0100K187; Coil former: B66414W1008D001; Yokes: B66414B2000;"
+16,,esynr3z_RegulatorSwitching_LM3488MM,U1,LM3488MM,VSSOP-8_3.0x3.0mm_P0.65mm,1,http://www.ti.com/lit/ds/symlink/lm3488q-q1.pdf,,
