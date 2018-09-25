@@ -15,3 +15,18 @@ Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet
 14,,esynr3z_Potentiometer_PVZ3A,RV1,PVZ3A152,Murata_PVZ3A,1,~,1.5k,
 15,,esynr3z_Transformer_EFD15_2WI,T1,EFD15_2WI,EFD15_B66414W1008D001,1,https://en.tdk.eu/inf/80/db/fer/efd_15_8_5.pdf,,"Windings: primary 10 turns x 0.7 mm, secondary 145 turns x 0.2 mm; Core: B66413U0100K187; Coil former: B66414W1008D001; Yokes: B66414B2000;"
 16,,esynr3z_RegulatorSwitching_LM3488MM,U1,LM3488MM,VSSOP-8_3.0x3.0mm_P0.65mm,1,http://www.ti.com/lit/ds/symlink/lm3488q-q1.pdf,,
+
+
+
+
+
+Component Groups:,16
+Component Count:,17
+Fitted Components:,17
+Number of PCBs:,1
+Total components:,17
+Schematic Version:,A
+Schematic Date:,
+BoM Date:,Tue 25 Sep 2018 21:00:42 MSK
+Schematic Source:,/home/esynr3z/MyRepos/nixie-ps/nixie-ps.sch
+KiCad Version:,Eeschema 6.0.0-rc1-unknown-r13783-618182dc

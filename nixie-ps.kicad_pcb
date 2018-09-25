@@ -1,4 +1,4 @@
-(kicad_pcb (version 20171130) (host pcbnew 6.0.0-rc1-unknown-r13424-46f5d81d)
+(kicad_pcb (version 20171130) (host pcbnew 6.0.0-rc1-unknown-r13783-618182dc)
 
   (general
     (thickness 1.6)
@@ -12,7 +12,7 @@
   (page A4)
   (title_block
     (title "High voltage power supply unit for Nixie tubes")
-    (rev v1.0)
+    (rev A)
   )
 
   (layers
@@ -57,6 +57,7 @@
     (pad_size 1.524 1.524)
     (pad_drill 0.762)
     (pad_to_mask_clearance 0.1)
+    (solder_mask_min_width 0.25)
     (aux_axis_origin 0 0)
     (visible_elements FFFFFF7F)
     (pcbplotparams

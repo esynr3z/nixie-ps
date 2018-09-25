@@ -7,7 +7,7 @@ encoding utf-8
 Sheet 1 1
 Title "High voltage power supply unit for Nixie tubes"
 Date ""
-Rev "v1.0"
+Rev "A"
 Comp ""
 Comment1 ""
 Comment2 ""
